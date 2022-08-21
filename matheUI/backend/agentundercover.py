@@ -59,12 +59,12 @@ class AgentUndercover:
 
     def add_profession(self, places_group: str, place_name: str, profession: str):
         if profession not in self.places_dicts[places_group][place_name]:
-            self.places_dicts[places_group][place_name] += profession
+            self.places_dicts[places_group][place_name] += [profession]
         else:
             print(f"INFO: profession already exists in '{places_group}'/'{place_name}'")
 
     def delete_profession(self, places_group: str, place_name: str, profession: str):
-        del self.places_dicts[places_group][place_name][profession]
+        self.places_dicts[places_group][place_name].remove(profession)
 
     def update_data_files(self):
         """ function to update the data files with self.places_dict content """
