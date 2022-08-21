@@ -14,10 +14,10 @@ jobs:
       - name: Test environment
         run: |
           pip install -e .
-      - name: Run pytest
-        run: |
-          pip install pytest
-          pytest .
+      #- name: Run pytest
+        #run: |
+          #pip install pytest
+          #pytest .
       - name: Run isort
         run: |
           pip install isort
