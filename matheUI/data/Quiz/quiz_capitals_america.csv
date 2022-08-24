@@ -1,0 +1,30 @@
+,QUESTION,SOLUTION,FAKE_ANSWER_1,FAKE_ANSWER_2,FAKE_ANSWER_3,INFO
+0,Kanada,Ottawa,Vancouver,Toronto,Boston,Nordamerika
+1,USA,Washington DC,New York,Boston,Philadelphia,Nordamerika
+2,Mexiko,Mexiko-Stadt,León,Puebla,Ciudad Juárez,Mittelamerika
+3,Bahamas,Nassau,Bridgetown,Belmopan,Roseau,Mittelamerika
+4,Costa Rica,San José,Nassau,Port-au-Prince,Tegucigalpa,Mittelamerika
+5,dominik. Republik,Santo Domingo,Nassau,Bridgetown,San José,Mittelamerika
+6,El Salvador,San Salvador,San José,Salvador-Stadt,Puebla,Mittelamerika
+7,Guatemala,Guatemale-Stadt,Nassau,Santo Domingo,San Salvador,Mittelamerika
+8,Haiti,Port-au-Prince,Santo Domingo,San José,Belmopan,Mittelamerika
+9,Honduras,Tegucigalpa,San José,Ciudad Juárez,León,Mittelamerika
+10,Jamaika,Kingston,San José,Havanna,Kingstown,Mittelamerika
+11,Kuba,Havanna,Panama,San Juan,Kingstown,Mittelamerika
+12,Nicaragua,Managua,Port-of-Spain,San Juan,Puebla,Mittelamerika
+13,Panama,Panama,Havanna,Kingston,San Juan,Mittelamerika
+14,Puerto Rico,San Juan,Havanna,San José,San Salvador,Mittelamerika
+15,Argentinien,Buenos Aires,Lima,Caracas,Sucre,Südamerika
+16,Bolivien,Sucre,Buenos Aires,Lima,San Juan,Südamerika
+17,Brasilien,Brasilia,Buenos Aires,Havanna,Puebla,Südamerika
+18,Chile,Santiago de Chile,Caracas,Lima,Ciudad Chile,Südamerika
+19,Osterinseln,Hanga Roa,San Juan,León,Belmopan,Südamerika
+20,Ecuador,Quito,Santo Domingo,Nassau,Roseau,Südamerika
+21,Galápagosinseln,Baquerizo Moreno,Ciudad Juárez,Sucre,Roseau,Südamerika
+22,Guyana,Georgetown,Kingstown,León,Quito,Südamerika
+23,Kolumbien,Bogotá,Quito,Santo Domingo,San José,Südamerika
+24,Paraguay,Asunción,Nassau,Lima,Tegucigalpa,Südamerika
+25,Peru,Lima,Bogotá,Hanga Roa,Baquerizo Moreno,Südamerika
+26,Suriname,Paramaribo,Tegucigalpa,Quito,Georgetown,Südamerika
+27,Uruguay,Montevideo,Asunción,Bogotá,Sucre,Südamerika
+28,Venezuela,Caracas,Havanna,San José,Lima,Südamerika

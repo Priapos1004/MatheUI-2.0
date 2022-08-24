@@ -1,0 +1,52 @@
+,QUESTION,SOLUTION,FAKE_ANSWER_1,FAKE_ANSWER_2,FAKE_ANSWER_3,INFO
+0,Essigsäure,Ethansäure,Methansäure,Propansäure,Butansäure,CH3COOH
+1,umgangssprachlicher Alkohol,Ethanol,Methanol,Propanal,Butanal,
+2,H20,Wasser,Wasserstoff,Knallgas,Kochsalz,
+3,Amoniak,NH3,NOH,CO(CH3)2,NCl3,
+4,Traubenzucker,Glucose,Fructose,Maltose,Laktose,C6H12O6
+5,Alkansäure + Alkohol,Ester,Aldehyd,Alkanal,Keton,
+6,Saccharide,Zucker,Salze,Eiweiße,Metallionen,
+7,edelstes der Metalle,Kupfer,Magnesium,Aluminium,Zink,
+8,keine Leitfähigkeit,Alkohole,Salzlösung,Metalle,Graphit,
+9,Salzsäure,HCl,HNO3,H2S,H2CO3,stark/anorganisch
+10,Salpetersäure,HNO3,H2SO4,H3PO4,HBr,stark/anorganisch
+11,Wasser + CO2,Kohlensäure,Graphit + Peroxid,Methan + O2,Butanol,
+12,H2SO4,Schwefelsäure,Sulfoxylsäure,Sulfit,Sulfone,
+13,Trichlormethan,Chloroform,Heizgas,Holzgas,Blausäure,
+14,NICHT C6H12O6,Maltose,Glucose,Fructose,Galactose,
+15,NICHT Modifikation von Kohlenstoff,Carbid,Diamant,Graphit,Fulleren,
+16,NaCl,Kochsalz,Natriumchlorit,Saccharose,Natriumcitrat,
+17,Rest - OH,Alkohole,Ketone,Alkanale,Ester,Funktionellegruppe
+18,Rest - CO - Rest,Ketone,Alkohole,Alkanale,Ester,Funktionellegruppe
+19,C - C,Alkane,Alkanale,Ester,Alkine,Funktionellegruppe
+20,C = C,Alkene,Alkine,Alkane,Alkanole,Funktionellegruppe
+21,Rest - COH,Alkanale,Alkanole,Alkansäure,Ester,Funktionellegruppe
+22,Rest - COOH,Alkansäure,Ester,Ketone,Alkohole,Funktionellegruppe
+23,Rest - COO - Rest,Ester,Ketone,Alkane,Alkansäure,Funktionellegruppe
+24,KEINE anorganische,Substitution,Redox,Säure - Base,Fällung,Reaktionsart
+25,KEINE organische,Redox,Eliminierung,Substitution,Addition,Reaktionsart
+26,Gitterstruktur Na,Metallgitter,Ionengitter,Atomgitter,Molekülgitter,
+27,Gitterstruktur H2,Molekülgitter,Ionengitter,Atomgitter,Metallgitter,
+28,Gitterstruktur SiO2,Atomgitter,Ionengitter,Metallgitter,Molekülgitter,
+29,Gitterstruktur NaCl,Ionengitter,Metallgitter,Molekülgitter,Atomgitter,
+30,Summenformel Wasserstoff,H2,H - H,linear,s-s-δ-Bindung,
+31,Lewis-Formel Wasserstoff,H - H,H2,linear,s-s-δ-Bindung,
+32,EPA - Modell Wasserstoff,linear,H2,H - H,s-s-δ-Bindung,
+33,VB - Modell Wasserstoff,s-s-δ-Bindung,H2,H - H,linear,
+34,Metall + Sauerstoff,Metalloxid,Lauge + H2,Ester + Wasser,Wasser + Salz,
+35,Säure + Base,Wasser + Salz,Ester + Wasser,Salz + H2,Ester + H2,
+36,Metall + Nichtmetall,Salz,Lauge + Wasser,Salz + H2,Lauge,
+37,Prim. Alkohol + Kupfer(II)-oxid,H2O+Aldehyd+Cu,CuO2H2 + Alkan,Keton + H2O + Cu,Alkoholat + H2,
+38,Metall + Wasser,Lauge + H2,Salz + H2,Lauge + H2O,Salz + H2O,
+39,Säure + Metall,Salz + H2,Salz + H2O,Metalloxid + H2,Lauge,
+40,Säure + Alkohol,Ester + Wasser,Alkoholat + H2,Aldehyd + H2O,Keton + H2,
+41,Sek. Alkohol + Kupfer(II)-oxid,H2O + Cu + Keton,H2O + Aldehyd,Cu-Lauge,Alkoholat + H2,
+42,Alkohol + Metall,Alkoholat + H2,Lauge + H2,Säure + H2O,Alkoholat + H2O,
+43,Nichtmetalloxid + Wasser,Säure,Lauge,Salz,H2O2 + Metall,
+44,Säure + Metalloxid,Wasser + Salz,Salz + H2,Alkohol + Metall,Metall + Aldehyd,
+45,Metalloxid + Wasser,Lauge,Säure,Salz,Metall + H2O2,
+46,Höhste Oxidationzahl Kohlenstoff,Alkansäure,Alkanal,Alkan,Alkohol,
+47,Welche Regel ist am stärksten?,Flour OZ = -1,H OZ = 1,O OZ = -2,Chlor OZ = -1,
+48,Alkan + Sauerstoff,H2O + CO2,H2O + C,NH3 + CO2,CO + SO2,
+49,Die meisten C-Atome,Butan,Essigsäure,Propanal,Methanol,
+50,Gitterstruktur C,Atomgitter,Metallgitter,Ionengitter,Molekülgitter,
