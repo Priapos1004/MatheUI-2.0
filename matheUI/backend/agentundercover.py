@@ -1,5 +1,3 @@
-import os
-import pickle
 import random
 from typing import Union
 
@@ -23,8 +21,7 @@ class AgentUndercover(AbstactGame):
         
         self.places_dicts: dict[str, dict[str, list[str]]] = {}
         for places_group in list(places_files.keys()):
-            with open(os.path.dirname(__file__)+places_folder+places_files[places_group], 'rb') as f:
-                self.places_dicts[places_group] = pickle.load(f)
+            self.places_dicts[places_group] = self._load_pickled_dict(places_folder+places_files[places_group])
 
     def data_report(self):
         """ data report (places groups, places, professions) """
@@ -43,7 +40,7 @@ class AgentUndercover(AbstactGame):
     def get_places(self, places_group: str) -> list[str]:
         return list(self.places_dicts[places_group].keys())
 
-    def get_places_group(self) -> list[str]:
+    def get_places_groups(self) -> list[str]:
         return list(self.places_dicts.keys())
 
     def add_place(self, places_group: str, place_name: str, professions: list[str]):
@@ -76,8 +73,7 @@ class AgentUndercover(AbstactGame):
         answer = input()
         if answer == "yes":
             for places_group in list(self.places_files.keys()):
-                with open(os.path.dirname(__file__)+self.places_folder+self.places_files[places_group], 'wb') as f:
-                    pickle.dump(self.places_dicts[places_group], f)
+                self._pickle_dict(self.places_dicts[places_group], self.places_folder+self.places_files[places_group])
             print("data files updated")
         else:
             print("process stopped")
@@ -95,7 +91,7 @@ class AgentUndercover(AbstactGame):
             tuple of place name and list with roles
         """
         if places_groups == "all":
-            places_groups = list(self.places_dicts.keys())
+            places_groups = self.get_places_groups()
 
         round_places: dict[str, list[str]] = {}
         for places_group in places_groups:
