@@ -6,8 +6,10 @@ from typing import Union
 from matheUI.config import (AGENT_UNDERCOVER_PLACES_FILES,
                             AGENT_UNDERCOVER_PLACES_FOLDER)
 
+from .abstractGame import AbstactGame
 
-class AgentUndercover:
+
+class AgentUndercover(AbstactGame):
     """ AgentUndercover backend """
 
     def __init__(self, places_folder: str = AGENT_UNDERCOVER_PLACES_FOLDER, places_files: dict[str, str] = AGENT_UNDERCOVER_PLACES_FILES):
@@ -24,7 +26,7 @@ class AgentUndercover:
             with open(os.path.dirname(__file__)+places_folder+places_files[places_group], 'rb') as f:
                 self.places_dicts[places_group] = pickle.load(f)
 
-    def places_report(self):
+    def data_report(self):
         """ data report (places groups, places, professions) """
         print(f"{len(self.get_places_group())} different groups of places {self.get_places_group()}")
         for places_group in self.get_places_group():
