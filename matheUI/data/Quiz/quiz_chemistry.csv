@@ -23,8 +23,8 @@
 21,Rest - COH,Alkanale,Alkanole,Alkansäure,Ester,Funktionellegruppe
 22,Rest - COOH,Alkansäure,Ester,Ketone,Alkohole,Funktionellegruppe
 23,Rest - COO - Rest,Ester,Ketone,Alkane,Alkansäure,Funktionellegruppe
-24,KEINE anorganische,Substitution,Redox,Säure - Base,Fällung,Reaktionsart
-25,KEINE organische,Redox,Eliminierung,Substitution,Addition,Reaktionsart
+24,KEINE anorganische Reaktionsart,Substitution,Redox,Säure - Base,Fällung,
+25,KEINE organische Reaktionsart,Redox,Eliminierung,Substitution,Addition,
 26,Gitterstruktur Na,Metallgitter,Ionengitter,Atomgitter,Molekülgitter,
 27,Gitterstruktur H2,Molekülgitter,Ionengitter,Atomgitter,Metallgitter,
 28,Gitterstruktur SiO2,Atomgitter,Ionengitter,Metallgitter,Molekülgitter,
