@@ -59,7 +59,10 @@ class Scharade(AbstactGame):
 
     def get_difficulty_of_word(self, set_name: str, word: str) -> int:
         df = self.scharade_sets[set_name]
-        return df[(df == word).any(axis=1)]["DIFFICULTY"].iloc[0]
+        if word in list(df["WORD"]):
+            return df[(df == word).any(axis=1)]["DIFFICULTY"].iloc[0]
+        else:
+            print(f"WARNING: word does not exist in word set '{set_name}'")
 
     def get_words_of_difficulty(self, set_name: str, difficulty: int) -> list[str]:
         df = self.scharade_sets[set_name]
