@@ -29,3 +29,5 @@ from matheUI.backend import AgentUndercover
 auc = AgentUndercover()
 auc.generate_round(player_number=7, spy_number=2, places_groups=["standard"])
 ```
+
+--> in the '[examples](examples)' folder you can find notebooks with code snippets that explain the usage of the package
