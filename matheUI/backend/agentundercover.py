@@ -85,6 +85,7 @@ class AgentUndercover(AbstactGame):
             spy_number: number of spies in the roles (has to be smaller than player_number)
             places_groups: which groups of places shall be used
                 'all': all groups in self.places_dict
+                str: string of group name
                 list[str]: list with group names
         
         @return:
@@ -92,6 +93,8 @@ class AgentUndercover(AbstactGame):
         """
         if places_groups == "all":
             places_groups = self.get_places_groups()
+        elif type(places_groups) == str:
+            places_groups = [places_groups]
 
         round_places: dict[str, list[str]] = {}
         for places_group in places_groups:

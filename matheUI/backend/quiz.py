@@ -38,13 +38,15 @@ class Quiz(AbstactGame):
         """
         @params:
             question_number: how many questions shall be picked (if number is greater than max questions for the categories, the maximum will be used)
-            categories: from which categories shall the question be picked (if 'all', use all available categories)
+            categories: from which categories shall the question be picked. List of categories or name of category (if 'all', use all available categories)
 
         @return:
             pandas Dataframe with picked questions and columns "QUESTION", "SOLUTION", "FAKE_ANSWER_1", "FAKE_ANSWER_2", "FAKE_ANSWER_3", "INFO"
         """
         if categories == "all":
             categories = self.get_categories()
+        elif type(categories) == str:
+            categories = [categories]
 
         possible_questions: pd.DataFrame = pd.DataFrame(columns=["QUESTION", "SOLUTION", "FAKE_ANSWER_1", "FAKE_ANSWER_2", "FAKE_ANSWER_3", "INFO"])
         for category in categories:
