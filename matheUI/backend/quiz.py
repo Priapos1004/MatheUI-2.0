@@ -34,6 +34,19 @@ class Quiz(AbstactGame):
     def get_df(self, category: str) -> pd.DataFrame:
         return self.quiz_categories[category]
 
+    def add_question(
+        self,
+        category: str,
+        question: str,
+        solution: str,
+        fake_answer1: str,
+        fake_answer2: str,
+        fake_answer3: str,
+        info: str,
+    ):
+        question_df = Quiz.create_questions_df([question], [solution], [fake_answer1], [fake_answer2], [fake_answer3], [info])
+        self.add_questions(category, question_df)
+
     def add_questions(self, category: str, question_df: pd.DataFrame):
         self.quiz_categories[category] = self.quiz_categories[category].append(question_df, ignore_index=True)
 
@@ -48,7 +61,7 @@ class Quiz(AbstactGame):
         fake_answers1: list[str],
         fake_answers2: list[str],
         fake_answers3: list[str],
-        infos: list[str]
+        infos: list[str],
     ) -> pd.DataFrame:
         df = pd.DataFrame(columns=["QUESTION", "SOLUTION", "FAKE_ANSWER_1", "FAKE_ANSWER_2", "FAKE_ANSWER_3", "INFO"])
         df["QUESTION"] = questions

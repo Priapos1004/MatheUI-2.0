@@ -20,3 +20,9 @@ QUIZ_DATA_FILES = {
     "history epochs": "quiz_history_epochs.csv",
     "physics": "quiz_physics.csv",
 }
+
+### Scharade backend
+SCHARADE_DATA_FOLDER = "/../data/Scharade/"
+SCHARADE_DATA_FILES = {
+    "standard": "scharade.csv"
+}
