@@ -25,8 +25,8 @@ class AgentUndercover(AbstactGame):
 
     def data_report(self):
         """ data report (places groups, places, professions) """
-        print(f"{len(self.get_places_group())} different groups of places {self.get_places_group()}")
-        for places_group in self.get_places_group():
+        print(f"{len(self.get_places_groups())} different groups of places {self.get_places_groups()}")
+        for places_group in self.get_places_groups():
             print()
             print(f"{places_group} places (number: {len(self.get_places(places_group))}):")
             for place in self.get_places(places_group):
@@ -68,7 +68,7 @@ class AgentUndercover(AbstactGame):
     def update_data_files(self):
         """ function to update the data files with self.places_dict content """
         print("Do you want to save the following data? (yes/no)")
-        self.places_report()
+        self.data_report()
         print("answer:")
         answer = input()
         if answer == "yes":
