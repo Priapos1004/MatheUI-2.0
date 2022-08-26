@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="matheUI",
-    version="0.0.2",
+    version="0.0.3",
     description="little funny games package created by Samuel Brinkmann",
     packages=find_packages(),
     package_data={},
