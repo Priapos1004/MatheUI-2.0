@@ -72,7 +72,7 @@ class AgentUndercover(AbstactGame):
         print("answer:")
         answer = input()
         if answer == "yes":
-            for places_group in list(self.places_files.keys()):
+            for places_group in self.get_places_groups():
                 self._pickle_dict(self.places_dicts[places_group], self.places_folder+self.places_files[places_group])
             print("data files updated")
         else:

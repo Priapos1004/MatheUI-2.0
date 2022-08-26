@@ -34,6 +34,44 @@ class Quiz(AbstactGame):
     def get_df(self, category: str) -> pd.DataFrame:
         return self.quiz_categories[category]
 
+    def add_questions(self, category: str, question_df: pd.DataFrame):
+        self.quiz_categories[category] = self.quiz_categories[category].append(question_df, ignore_index=True)
+
+    def delete_question(self, category: str, row_index: int):
+        self.quiz_categories[category].drop(index=row_index, inplace=True)
+        self.quiz_categories[category].reset_index(inplace=True, drop=True)
+
+    @staticmethod
+    def create_questions_df(
+        questions: list[str],
+        solutions: list[str],
+        fake_answers1: list[str],
+        fake_answers2: list[str],
+        fake_answers3: list[str],
+        infos: list[str]
+    ) -> pd.DataFrame:
+        df = pd.DataFrame(columns=["QUESTION", "SOLUTION", "FAKE_ANSWER_1", "FAKE_ANSWER_2", "FAKE_ANSWER_3", "INFO"])
+        df["QUESTION"] = questions
+        df["SOLUTION"] = solutions
+        df["FAKE_ANSWER_1"] = fake_answers1
+        df["FAKE_ANSWER_2"] = fake_answers2
+        df["FAKE_ANSWER_3"] = fake_answers3
+        df["INFO"] = infos
+        return df
+
+    def update_data_files(self):
+        """ function to update the data files with self.quiz_categories content """
+        print("Do you want to save the following data? (yes/no)")
+        self.data_report()
+        print("answer:")
+        answer = input()
+        if answer == "yes":
+            for category in self.get_categories():
+                self._save_dataframe(self.quiz_categories[category], self.data_folder_path+self.data_files[category])
+            print("data files updated")
+        else:
+            print("process stopped")
+
     def generate_round(self, question_number: int = 10, categories: Union[str, list] = "all") -> pd.DataFrame:
         """
         @params:

@@ -13,6 +13,11 @@ class AbstactGame(metaclass = ABCMeta):
         print("no data used")
 
     @abstractmethod
+    def update_data_files(self):
+        """ method to update data files with class object changes """
+        print("no data used")
+
+    @abstractmethod
     def generate_round(self, **kwargs):
         """ method to generate round for game """
         print("generate_round is not implemented yet")
