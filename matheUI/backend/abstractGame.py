@@ -41,3 +41,15 @@ class AbstactGame(metaclass = ABCMeta):
         """ load pandas dataframe from csv file """
         df = pd.read_csv(os.path.dirname(__file__)+file_path, index_col=0)
         return df
+
+    def save_game(self, file_name: str):
+        """ create game object checkpoint as pickle file """
+        with open(os.path.dirname(__file__)+"/../data/Checkpoints/"+file_name+".pkl", 'wb') as f:
+            pickle.dump(self, f)
+
+    @staticmethod
+    def load_game(file_name: str):
+        """ load game checkpoint from pickle file """
+        with open(os.path.dirname(__file__)+"/../data/Checkpoints/"+file_name+".pkl", 'rb') as f:
+            game = pickle.load(f)
+        return game
