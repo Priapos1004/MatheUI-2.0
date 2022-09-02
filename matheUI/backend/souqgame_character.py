@@ -30,6 +30,7 @@ class SouqGameCharacter:
         return list(self.trades.keys())
 
     def get_displayed_item(self, trade_item: str):
+        """ method to get the displayed text of wanted item for a trade """
         displayed_item = self.trades[trade_item]
         if type(displayed_item) == str:
             return displayed_item
@@ -41,10 +42,11 @@ class SouqGameCharacter:
             raise UserWarning("value for trade_item is not confirm")        
 
     def get_displayed_trades(self) -> list[tuple[str, str]]:
+        """ returns list with tuple (trade item, displayed item) to show player """
         displayed_trades: list[tuple[str, str]] = []
         for trade_item in self.get_accepted_items():
             displayed_item = self.get_displayed_item(trade_item)
-            displayed_trades.append((trade_item, displayed_item))
+            displayed_trades.append((trade_item.split("_")[0], displayed_item))
         return displayed_trades
 
     def trade(self, trade_item: str):
@@ -55,9 +57,8 @@ class SouqGameCharacter:
         @return:
             -1: character does not trade this item
             -2: character needs to be happy for this trade
-            -3: unsupported structure for trading
             str: new item for inventory
-            list[int, str]: new location and character, inventory item keeps the same
+            list[int, str]: new location and character (inventory item keeps the same)
         """
         if trade_item in self.get_accepted_items():
             given_item = self.trades[trade_item]
@@ -84,6 +85,6 @@ class SouqGameCharacter:
                 elif type(given_item[0]) == str and type(given_item[1]) == str:
                     return given_item[1]
 
-            return -3
+            raise UserWarning("ERROR: found unsupported structure for trading in data")
         else:
             return -1
