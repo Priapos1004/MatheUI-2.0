@@ -64,11 +64,14 @@ class SouqGameLevel:
 
     def get_current_position_trades(self) -> list[tuple[str, str]]:
         """ returns list with tuples of trade item and displayed text for wanted item """
-        return self.characters[self.location][self.pos].get_displayed_trades()
+        return self.get_current_character().get_displayed_trades()
+
+    def get_current_character_happiness(self) -> list[bool]:
+        return list(self.get_current_character().happy.values())
 
     def is_in_inventory(self, item: str):
         """ checks if item is in inventory or equal to item in inventory """
-        if item == self.inventory or (item, self.inventory) in self.equal or (self.inventory, item) in self.equal:
+        if item == self.inventory or (item, self.inventory) in self.equal or (self.inventory, item) in self.equal or item == "*":
             return True
         else:
             return False
@@ -79,25 +82,29 @@ class SouqGameLevel:
             option: index of option from 'get_current_position_trades' method output
 
         @return:
-            1: level finished
-            0: successfully traded
+            2: successful location swap
+            1: successfully traded
+            0: level finished
             -1: character does not trade this item
             -2: character needs to be happy for this trade
             -3: not the correct item for this trade in inventory
         """
         trade_option = self.get_current_position_trades()[option]
         if self.is_in_inventory(trade_option[0]):
-            trade_result = self.get_current_character().trade(self.get_current_character().get_accepted_items()[0]) # for solving problem with unique dictonary keys
+            trade_result = self.get_current_character().trade(self.get_current_character().get_accepted_items()[option]) # for solving problem with unique dictonary keys
             if type(trade_result) == int:
                 return trade_result
             elif type(trade_result) == str:
                 self.inventory = trade_result
+                if self.is_in_inventory(self.end_item):
+                    return 0
+                else:
+                    return 1
             elif type(trade_result) == list:
                 self.location = trade_result[0]
                 self.pos = trade_result[1]
-
-            if self.is_in_inventory(self.end_item):
-                return 1
-            return 0
+                return 2
+            
+            raise UserWarning("ERROR: something unexpected happened -> problem in SouqGameCharacter.trade result")
         else:
             return -3

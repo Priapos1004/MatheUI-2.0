@@ -82,7 +82,7 @@ class SouqGameCharacter:
                     self.happy[given_item[0][1]] = True
                     return given_item[1]
                 # normal trade with different name displayed (str: list[str, str]) or location swap trade (str: list[str, list[int, str]])
-                elif type(given_item[0]) == str and type(given_item[1]) == str:
+                elif type(given_item[0]) == str:
                     return given_item[1]
 
             raise UserWarning("ERROR: found unsupported structure for trading in data")
