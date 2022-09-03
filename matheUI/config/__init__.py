@@ -26,3 +26,10 @@ SCHARADE_DATA_FOLDER = "/../data/Scharade/"
 SCHARADE_DATA_FILES = {
     "standard": "scharade.csv"
 }
+
+### SouqGame backend
+SOUQGAME_DATA_FOLDER = "/../data/SouqGame/"
+SOUQGAME_DATA_FILES = {
+    "Mittelalter": ["souq_level_11.pkl", "souq_level_12.pkl", "souq_level_13.pkl", "souq_level_14.pkl", "souq_level_15.pkl", "souq_level_15_2.pkl"],
+    "Custom level": [],
+}

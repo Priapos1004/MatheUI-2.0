@@ -4,18 +4,8 @@ class SouqGameCharacter:
     def __init__(self, character_name: str, character_trades: dict[str, any]):
         self.character_name = character_name
         self.trades = character_trades
+        # get if there are trades that make the character happy and save that the character is not happy at the beginning
         self.happy: dict[bool] = {}
-        for value in list(self.trades.values()):
-            if type(value) == list:
-                if len(value) == 1:
-                    if type(value[0]) == list:
-                        value = value[0]
-                    else:
-                        continue
-
-                if len(value) == 2:
-                    pass
-
         value_list = list(self.trades.values())
         while value_list != []:
             value = value_list[0]

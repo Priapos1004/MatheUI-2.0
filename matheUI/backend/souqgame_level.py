@@ -29,6 +29,10 @@ class SouqGameLevel:
         self.location: int = 0 # current location (only relevant if multiple locations exist)
         self.inventory = level_dict["start_item"] # current item (first item is start item)
 
+    @property
+    def location_number(self):
+        return len(self.characters)
+
     def move_forward(self):
         """ moves position one character forward """
         pos_idx = self.get_current_characters().index(self.pos)
@@ -57,9 +61,11 @@ class SouqGameLevel:
             return False
 
     def get_current_character(self) -> SouqGameCharacter:
+        """ returns SouqGameCharacter class object of current character """
         return self.characters[self.location][self.pos]
 
     def get_current_characters(self) -> list[str]:
+        """ returns character name list of current location """
         return list(self.characters[self.location].keys())
 
     def get_current_position_trades(self) -> list[tuple[str, str]]:
@@ -67,6 +73,7 @@ class SouqGameLevel:
         return self.get_current_character().get_displayed_trades()
 
     def get_current_character_happiness(self) -> list[bool]:
+        """ returns list with booleans of different happy states of current character """
         return list(self.get_current_character().happy.values())
 
     def is_in_inventory(self, item: str):
