@@ -31,6 +31,7 @@ class SouqGameLevel:
 
     @property
     def location_number(self):
+        """ number of different locations """
         return len(self.characters)
 
     def move_forward(self):

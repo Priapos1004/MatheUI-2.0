@@ -1,3 +1,5 @@
+from typing import Union
+
 from matheUI.config import SOUQGAME_DATA_FILES, SOUQGAME_DATA_FOLDER
 
 from .abstractGame import AbstactGame
@@ -56,8 +58,43 @@ class SouqGame(AbstactGame):
         else:
             raise UserWarning("ERROR: wrong structure of level data")
 
+    @staticmethod
+    def build_level(start_item: str, end_item: str, start_pos: str, data: Union[list[dict[str, dict[str, any]]], dict[str, dict[str, any]]], equal: list[tuple[str, str]]):
+        """
+        method to create a level dictonary
+
+        @params:
+            start_item: item that the player starts with
+            end_item: the level ends when the player has this item
+            start_pos: character name the player starts (sometimes helpful to trick the player)
+            data: dictonary with character and what they trade (for multiple locations list of such dictonaries)
+                key-value-form: '<character_name>': {<trade form>, ...}
+
+                trade-forms:
+                    normal-trade:
+                        str: str (e.g. 'Holz': 'Tisch')
+                    displayed-trade: first string is displayed, second string is item player gets in inventory
+                        str: list[str, str] (e.g. 'Holz': ['"besonderer" Tisch', 'kaputter Tisch'])
+                    only-if-happy-trade: trades only if character is happy
+                        str: list[any] (any can contain a normal-, displayed-, or location-trade) (e.g. 'Holz': ['Tisch'], 'Holz': [['"besonderer" Tisch', 'kaputter Tisch']], ...)
+                    make-happy-trade: trading gives player 'nichts' as item and makes character happy on position int (useful if needs multiple trades for complete happy)
+                        str: list[[<displayed text>, int], "nichts"] (e.g. 'Schokolade': [["glücklich", 0], "nichts"])
+                    location-trade: trade changes location of player and item keeps the same ("*" means the current inventory does not matter)
+                        "*": list[<displayed text>, [int, <character name>]] (int is the position in the data list the player is send to and <character name> the character inside this new location) (e.g. '*': ["Ortszauber", [1, "Schamane"]])
+
+            equal: list of item tuples that are for trading equal (e.g. ("Stock", "Kampfstab"))
+        """
+        return dict(
+            start_item=start_item, 
+            end_item=end_item,
+            start_pos=start_pos,
+            data=data,
+            equal=equal,
+        )
+
     def update_data_files(self):
         print("no changing of data intended (for now)")
 
     def generate_round(self, level_group: str, level_name: str) -> SouqGameLevel:
+        """ returns SouqGameLevel class object for playing the level """
         return SouqGameLevel(self.get_level(level_group, level_name))
