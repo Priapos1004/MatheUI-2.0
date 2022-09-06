@@ -95,7 +95,6 @@ class SouqGameLevel:
             0: level finished
             -1: character does not trade this item
             -2: character needs to be happy for this trade
-            -3: not the correct item for this trade in inventory
         """
         trade_option = self.get_current_position_trades()[option]
         if self.is_in_inventory(trade_option[0]):
@@ -115,4 +114,4 @@ class SouqGameLevel:
             
             raise UserWarning("ERROR: something unexpected happened -> problem in SouqGameCharacter.trade result")
         else:
-            return -3
+            return -1
