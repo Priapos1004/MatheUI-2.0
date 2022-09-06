@@ -14,7 +14,7 @@ class Scharade(AbstactGame):
         """
         @params:
             data_folder_path: path to the folder with the scharade data (Form: '/....../')
-            data_files: dictonary with name of the scharade sets and file name of the data (Form: {'standard': 'scharade.csv'})
+            data_files: dictionary with name of the scharade sets and file name of the data (Form: {'standard': 'scharade.csv'})
         """
         self.data_folder_path = data_folder_path
         self.data_files = data_files

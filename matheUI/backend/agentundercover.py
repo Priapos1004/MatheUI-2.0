@@ -14,7 +14,7 @@ class AgentUndercover(AbstactGame):
         """
         @params:
             places_folder: path to the folder with the places data (Form: '/....../')
-            places_files: dictonary with name of the places group and file name of the data (Form: {'standard': 'standard_places.pkl'})
+            places_files: dictionary with name of the places group and file name of the data (Form: {'standard': 'standard_places.pkl'})
         """
         self.places_folder = places_folder
         self.places_files = places_files
