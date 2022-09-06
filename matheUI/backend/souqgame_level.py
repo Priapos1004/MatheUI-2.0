@@ -99,7 +99,7 @@ class SouqGameLevel:
         """
         trade_option = self.get_current_position_trades()[option]
         if self.is_in_inventory(trade_option[0]):
-            trade_result = self.get_current_character().trade(self.get_current_character().get_accepted_items()[option]) # for solving problem with unique dictonary keys
+            trade_result = self.get_current_character().trade(self.get_current_character().get_accepted_items()[option]) # for solving problem with unique dictionary keys
             if type(trade_result) == int:
                 return trade_result
             elif type(trade_result) == str:

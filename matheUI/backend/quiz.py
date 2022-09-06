@@ -14,7 +14,7 @@ class Quiz(AbstactGame):
         """
         @params:
             data_folder_path: path to the folder with the quiz data (Form: '/....../')
-            data_files: dictonary with name of the quiz category and file name of the data (Form: {'physics': 'quiz_physics.csv'})
+            data_files: dictionary with name of the quiz category and file name of the data (Form: {'physics': 'quiz_physics.csv'})
         """
         self.data_folder_path = data_folder_path
         self.data_files = data_files

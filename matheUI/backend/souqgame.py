@@ -13,7 +13,7 @@ class SouqGame(AbstactGame):
         """
         @params:
             data_folder_path: path to the folder with the level data (Form: '/....../')
-            data_files: dictonary with list of level file paths for one level group (Form: {'Mittelalter': ["souq_level_11.pkl", ...], ...})
+            data_files: dictionary with list of level file paths for one level group (Form: {'Mittelalter': ["souq_level_11.pkl", ...], ...})
         """
         self.data_folder_path = data_folder_path
         self.data_files = data_files
@@ -41,7 +41,7 @@ class SouqGame(AbstactGame):
         return list(self.level_dicts[level_group].keys())
 
     def get_level(self, level_group: str, level_name: str) -> dict[str, any]:
-        """ returns level dictonary """
+        """ returns level dictionary """
         return self.level_dicts[level_group][level_name]
 
     def get_characters_in_level(self, level_group: str, level_name: str):
@@ -61,13 +61,13 @@ class SouqGame(AbstactGame):
     @staticmethod
     def build_level(start_item: str, end_item: str, start_pos: str, data: Union[list[dict[str, dict[str, any]]], dict[str, dict[str, any]]], equal: list[tuple[str, str]]):
         """
-        method to create a level dictonary
+        method to create a level dictionary
 
         @params:
             start_item: item that the player starts with
             end_item: the level ends when the player has this item
             start_pos: character name the player starts (sometimes helpful to trick the player)
-            data: dictonary with character and what they trade (for multiple locations list of such dictonaries)
+            data: dictionary with character and what they trade (for multiple locations list of such dictonaries)
                 key-value-form: '<character_name>': {<trade form>, ...}
 
                 trade-forms:
@@ -81,6 +81,8 @@ class SouqGame(AbstactGame):
                         str: list[[<displayed text>, int], "nichts"] (e.g. 'Schokolade': [["glücklich", 0], "nichts"])
                     location-trade: trade changes location of player and item keeps the same ("*" means the current inventory does not matter)
                         "*": list[<displayed text>, [int, <character name>]] (int is the position in the data list the player is send to and <character name> the character inside this new location) (e.g. '*': ["Ortszauber", [1, "Schamane"]])
+
+                NOTE: if you want to create multiple options for one item and the same character (e.g. 'Kuh': 'Mistgabel' and 'Kuh': 'Schwein'), you have to add "_1" and "_2" so that the dictionary keys are unique again (the underscore numbers will not be displayed and are just for internal operations)
 
             equal: list of item tuples that are for trading equal (e.g. ("Stock", "Kampfstab"))
         """
