@@ -5,22 +5,22 @@ class SouqGameLevel:
     """ level management class """
 
     def __init__(self, level_dict: dict[str, any]):
-        self.start_item = level_dict["start_item"]
+        self._start_item = level_dict["start_item"]
         self.end_item = level_dict["end_item"]
-        self.start_pos = level_dict["start_pos"]
-        self.data = level_dict["data"]
+        self._start_pos = level_dict["start_pos"]
+        self._data = level_dict["data"]
 
         self.characters: list[dict[str, SouqGameCharacter]] = []
-        if type(self.data) == list:
-            for location_characters in self.data:
+        if type(self._data) == list:
+            for location_characters in self._data:
                 location_characters_dict: dict[str, SouqGameCharacter] = {}
                 for character in list(location_characters.keys()):
                     location_characters_dict[character] = SouqGameCharacter(character, location_characters[character])
                 self.characters += [location_characters_dict]
         else:
             location_characters_dict: dict[str, SouqGameCharacter] = {}
-            for character in list(self.data.keys()):
-                location_characters_dict[character] = SouqGameCharacter(character, self.data[character])
+            for character in list(self._data.keys()):
+                location_characters_dict[character] = SouqGameCharacter(character, self._data[character])
             self.characters = [location_characters_dict]
 
         self.equal = level_dict["equal"]
