@@ -12,7 +12,9 @@ setup(
         "numpy",
         "tqdm",
     ],
-    extras_require={"test": ["pytest", "pylint!=2.5.0"],},
+    extras_require={
+        "test": ["pytest", "pylint!=2.5.0", "isort"],
+    },
     author="Samuel Brinkmann",
     license="MIT",
     tests_require=["pytest==4.4.1"],
