@@ -1,6 +1,8 @@
 # MatheUI-2.0
 little funny games
 
+/pypi/v/matheUI-backend
+
 ## set-up package
 
 install the package to your activated virtual environment
