@@ -20,7 +20,7 @@ setup(
         "tqdm",
     ],
     extras_require={
-        "test": ["pytest", "pylint!=2.5.0", "isort"],
+        "test": ["pytest", "pylint!=2.5.0", "isort", "refurb"],
     },
     author="Samuel Brinkmann",
     license="MIT",

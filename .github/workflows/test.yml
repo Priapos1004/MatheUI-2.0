@@ -15,3 +15,7 @@ jobs:
         run: pip install -e .["test"]
       - name: Run isort
         run: isort --check-only --diff .
+      - name: Test with refurb
+       run: refurb . --quiet
+      - name: Test with pytest
+        run: pytest
