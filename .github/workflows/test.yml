@@ -12,13 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Test environment
-        run: |
-          pip install -e .
-      #- name: Run pytest
-        #run: |
-          #pip install pytest
-          #pytest .
+        run: pip install -e .["test"]
       - name: Run isort
-        run: |
-          pip install isort
-          isort --check-only --diff .
+        run: isort --check-only --diff .

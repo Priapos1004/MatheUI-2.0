@@ -1,5 +1,5 @@
 ### AgentUndercover backend
-AGENT_UNDERCOVER_PLACES_FOLDER = "/../data/AgentUndercover/"
+AGENT_UNDERCOVER_PLACES_FOLDER = "/data/AgentUndercover/"
 AGENT_UNDERCOVER_PLACES_FILES = {
     "standard": "standard_places.pkl",
     "media": "media_places.pkl",
@@ -7,7 +7,7 @@ AGENT_UNDERCOVER_PLACES_FILES = {
 }
 
 ### Quiz backend
-QUIZ_DATA_FOLDER = "/../data/Quiz/"
+QUIZ_DATA_FOLDER = "/data/Quiz/"
 QUIZ_DATA_FILES = {
     "capitals africa": "quiz_capitals_africa.csv",
     "capitals america": "quiz_capitals_america.csv",
@@ -22,13 +22,13 @@ QUIZ_DATA_FILES = {
 }
 
 ### Scharade backend
-SCHARADE_DATA_FOLDER = "/../data/Scharade/"
+SCHARADE_DATA_FOLDER = "/data/Scharade/"
 SCHARADE_DATA_FILES = {
     "standard": "scharade.csv"
 }
 
 ### SouqGame backend
-SOUQGAME_DATA_FOLDER = "/../data/SouqGame/"
+SOUQGAME_DATA_FOLDER = "/data/SouqGame/"
 SOUQGAME_DATA_FILES = {
     "Mittelalter": ["souq_level_11.pkl", "souq_level_12.pkl", "souq_level_13.pkl", "souq_level_14.pkl", "souq_level_15.pkl", "souq_level_15_2.pkl"],
     "Custom level": [],

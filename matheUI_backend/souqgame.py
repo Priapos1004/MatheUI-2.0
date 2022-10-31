@@ -1,6 +1,6 @@
 from typing import Union
 
-from matheUI.config import SOUQGAME_DATA_FILES, SOUQGAME_DATA_FOLDER
+from matheUI_backend.config import SOUQGAME_DATA_FILES, SOUQGAME_DATA_FOLDER
 
 from .abstractGame import AbstactGame
 from .souqgame_level import SouqGameLevel
