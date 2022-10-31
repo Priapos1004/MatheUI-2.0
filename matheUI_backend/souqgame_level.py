@@ -56,10 +56,9 @@ class SouqGameLevel:
 
     def is_first_or_last_character(self) -> bool:
         """ returns True if current character is first or last in its location """
-        if self.pos == self.get_current_characters()[0] or self.pos == self.get_current_characters()[-1]:
+        if self.pos in (self.get_current_characters()[0], self.get_current_characters()[-1]):
             return True
-        else:
-            return False
+        return False
 
     def get_current_character(self) -> SouqGameCharacter:
         """ returns SouqGameCharacter class object of current character """
@@ -81,8 +80,7 @@ class SouqGameLevel:
         """ checks if item is in inventory or equal to item in inventory """
         if item == self.inventory or (item, self.inventory) in self.equal or (self.inventory, item) in self.equal or item == "*":
             return True
-        else:
-            return False
+        return False
 
     def trade(self, option: int):
         """
