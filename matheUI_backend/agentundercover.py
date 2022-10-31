@@ -1,7 +1,7 @@
 import random
 from typing import Union
 
-from matheUI.config import (AGENT_UNDERCOVER_PLACES_FILES,
+from matheUI_backend.config import (AGENT_UNDERCOVER_PLACES_FILES,
                             AGENT_UNDERCOVER_PLACES_FOLDER)
 
 from .abstractGame import AbstactGame

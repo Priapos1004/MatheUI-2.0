@@ -2,7 +2,7 @@ from typing import Union
 
 import pandas as pd
 
-from matheUI.config import SCHARADE_DATA_FILES, SCHARADE_DATA_FOLDER
+from matheUI_backend.config import SCHARADE_DATA_FILES, SCHARADE_DATA_FOLDER
 
 from .abstractGame import AbstactGame
 

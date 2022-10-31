@@ -2,7 +2,7 @@ from typing import Union
 
 import pandas as pd
 
-from matheUI.config import QUIZ_DATA_FILES, QUIZ_DATA_FOLDER
+from matheUI_backend.config import QUIZ_DATA_FILES, QUIZ_DATA_FOLDER
 
 from .abstractGame import AbstactGame
 
