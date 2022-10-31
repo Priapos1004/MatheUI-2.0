@@ -14,7 +14,7 @@ class SouqGameCharacter:
                         value_list.append(value[0])
                 elif len(value) == 2 and type(value[0]) == list and value[1] == "nichts":
                     self.happy[value[0][1]] = False
-            del value_list[0]
+            value_list.pop(0)
 
     def get_accepted_items(self) -> list[str]:
         return list(self.trades.keys())
@@ -26,7 +26,7 @@ class SouqGameCharacter:
             return displayed_item
         elif type(displayed_item) == list and type(displayed_item[0]) == str:
             return displayed_item[0]
-        elif type(displayed_item) == list and type(displayed_item[0]) == list and type(displayed_item[0][0]) == str:
+        elif type(displayed_item) ==  type(displayed_item[0]) == list and type(displayed_item[0][0]) == str:
             return displayed_item[0][0]
         else:
             raise UserWarning("value for trade_item is not confirm")        
