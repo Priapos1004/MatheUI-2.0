@@ -1,7 +1,7 @@
 # MatheUI-2.0
 little funny games
 
-/pypi/v/matheUI-backend
+[![PyPI version](https://badge.fury.io/py/matheUI-backend.svg)](https://badge.fury.io/py/matheUI-backend)
 
 ## set-up package
 
