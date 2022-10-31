@@ -1,21 +1,29 @@
-name: Test
+name: Code Quality Checks
 
-on: 
-  pull_request: {}
-  push:
-    branches: "*"
-    tags: "*"
+on:
+ push:
+   branches: ["*"]
+   tags: ["*"]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Test environment
+ test:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+
+     - name: Setup Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: 3.10
+
+    - name: Test environment
         run: pip install -e .["test"]
-      - name: Run isort
-        run: isort --check-only --diff .
-      - name: Test with refurb
+
+     - name: Test with isort
+       run: isort --check-only --diff .
+
+    - name: Test with refurb
        run: refurb . --quiet
-      - name: Test with pytest
-        run: pytest
+
+     - name: Test with pytest
+       run: pytest
