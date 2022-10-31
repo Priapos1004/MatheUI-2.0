@@ -24,6 +24,3 @@ jobs:
 
       - name: Test with refurb
         run: refurb . --quiet
-
-      - name: Test with pytest
-        run: pytest
